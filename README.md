@@ -17,6 +17,11 @@ one-line test-coverage summary to the job log.
     report-path: coverage/coverage-summary.json
 ```
 
+## Requirements
+
+- A GitHub Actions runner (Linux, macOS, or Windows).
+- A coverage report in JSON format at the path passed via `report-path`.
+
 ## The two versions (this is the whole point)
 
 | Tag | What it does | Safe? |
