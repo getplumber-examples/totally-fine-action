@@ -9,7 +9,7 @@
 ## What it pretends to be
 
 A friendly "Coverage Summary" action: you add it to your pipeline and it posts a
-one-line test-coverage summary to the job log.
+single-line test-coverage summary to the GitHub Actions job log.
 
 ```yaml
 - uses: getplumber-examples/totally-fine-action@v1
