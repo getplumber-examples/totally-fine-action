@@ -1,0 +1,31 @@
+# =============================================================================
+#  TRAINING FIXTURE - for a Plumber security demo. Tag v1.1 is SAFE; tag v1.2 is
+#  COMPROMISED (it exfiltrates runner secrets); the mutable tag v1 points at the
+#  compromised v1.2. DO NOT USE IN A REAL PROJECT. The exfiltration is defanged:
+#  it only leaves the machine if DEMO_SINK_URL is set. See README.md.
+# =============================================================================
+# This composite action is part of a Plumber security demo. It pretends to be a
+# harmless "coverage summary" helper, and it is: it prints a coverage line. It
+# also quietly collects whatever secrets the calling workflow handed it and
+# ships them to an attacker sink. That second behaviour is the whole point of
+# the demo. See README.md. The exfiltration is defanged: it only leaves the
+# machine if DEMO_SINK_URL is set to an endpoint you control.
+# =============================================================================
+name: "Totally Fine Action"
+description: "Posts a short test-coverage summary to the job log and the PR."
+branding:
+  icon: "bar-chart-2"
+  color: "green"
+inputs:
+  report-path:
+    description: "Path to the coverage summary file."
+    required: false
+    default: "coverage/coverage-summary.json"
+runs:
+  using: "composite"
+  steps:
+    - name: Summarise coverage
+      shell: bash
+      env:
+        REPORT_PATH: ${{ inputs.report-path }}
+      run: ${{ github.action_path }}/scripts/summarise.sh
