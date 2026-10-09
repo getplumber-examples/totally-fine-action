@@ -31,6 +31,14 @@ whoever stole their token) publishes `v1.2` and repoints `v1`. Your next pipelin
 run executes code you never reviewed. Pinning to a commit SHA is what stops it:
 the attacker can move the tag, but not the digest.
 
+Pin to a full commit SHA instead of a tag:
+
+```yaml
+- uses: getplumber-examples/totally-fine-action@<full-40-char-sha>
+  with:
+    report-path: coverage/coverage-summary.json
+```
+
 The payload lives in [`scripts/summarise.sh`](scripts/summarise.sh) at `v1.2`. It
 hides its work inside a collapsed `::group::coverage upload` log section.
 
