@@ -1,5 +1,7 @@
 # totally-fine-action
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 > ⚠️ **TRAINING FIXTURE.** This action exists only for a Plumber CI/CD security
 > demo. The second release is built to behave like a supply-chain-compromised
 > GitHub Action. **Never** add it to a real repository. The exfiltration is
