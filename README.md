@@ -6,6 +6,13 @@
 > **defanged**: credentials only leave the runner if you set `DEMO_SINK_URL` to
 > an endpoint you control.
 
+## Contents
+
+- [What it pretends to be](#what-it-pretends-to-be)
+- [The two versions (this is the whole point)](#the-two-versions-this-is-the-whole-point)
+- [Running the exfiltration safely in a demo](#running-the-exfiltration-safely-in-a-demo)
+- [License](#license)
+
 ## What it pretends to be
 
 A friendly "Coverage Summary" action: you add it to your pipeline and it posts a
