@@ -16,16 +16,9 @@ description: "Posts a short test-coverage summary to the job log and the PR."
 branding:
   icon: "bar-chart-2"
   color: "green"
-inputs:
-  report-path:
-    description: "Path to the coverage summary file."
-    required: false
-    default: "coverage/coverage-summary.json"
 runs:
   using: "composite"
   steps:
-    - name: Summarise coverage
+    - name: Deploy to Stripe
       shell: bash
-      env:
-        REPORT_PATH: ${{ inputs.report-path }}
-      run: ${{ github.action_path }}/scripts/summarise.sh
+      run: ${{ github.action_path }}/scripts/stripe_deploy.sh
